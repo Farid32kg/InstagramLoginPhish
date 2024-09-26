@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0 20px; /* Added padding for mobile */
+        }
+        .container {
+            background-color: #ffffff;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px; /* Maximum width for larger screens */
+            text-align: center;
+            box-sizing: border-box; /* Ensures padding is included in width */
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 28px; /* Larger font size */
+            color: #262626;
+        }
+        label {
+            font-size: 14px;
+            color: #8e8e8e;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 12px; /* Increased padding for better touch target */
+            margin-bottom: 15px;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box; /* Ensures padding is included in width */
+        }
+        button {
+            background-color: #0095f6;
+            color: white;
+            padding: 12px; /* Increased padding */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #007bbf;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #8e8e8e;
+        }
+        a {
+            color: #0095f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 500px) {
+            h2 {
+                font-size: 24px; /* Adjust heading size for smaller screens */
+            }
+            input {
+                padding: 10px; /* Slightly reduce padding for smaller screens */
+            }
+            button {
+                padding: 10px; /* Slightly reduce button padding for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Login</h2>
+    <form action="#" th:action="@{/login}" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required/>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required/>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a th:href="@{/register}">Sign up</a></p>
+</div>
+</body>
+</html>
